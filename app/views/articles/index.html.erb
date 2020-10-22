@@ -1,0 +1,23 @@
+<h1>Articles Listing Page</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @articles.each do |a| %>
+        <tr>
+            <td><%= a.title %></td>
+            <td><%= a.description %></td>
+            <td><%= link_to 'Show', article_path(a)%></td>
+            <td><%= link_to 'Edit', edit_article_path(a)%></td>
+            <td><%= link_to 'Delete', article_path(a), method: :delete %></td> <!-- This is article GET method-->
+        </tr>
+        <% end %>
+    </tbody>
+</table>
